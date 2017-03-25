@@ -14,10 +14,10 @@
 #    along with object-drive-ui-oven .  If not, see <http://www.gnu.org/licenses/>.
 
 cd /code &&
-    ssh-keygen -f ${HOME}/.ssh/id_rsa -P "${TITLE}" -C "" &&
+    ssh-keygen -f ${HOME}/.ssh/id_rsa -P "" -C "${TITLE}" &&
 	curl --data-urlencode "key=$(cat ${HOME}/.ssh/id_rsa.pub)" --data-urlencode "title=${TITLE}" https://gitlab.363-283.io/api/v3/user/keys?private_token=${GITLAB_PRIVATE_TOKEN}  &&
-	cp /opt/docker/config ${HOME}/.ssh &&
-	chmod 0600 ${HOME}/.ssh &&
+	cp /opt/docker/config ${HOME}/.ssh/config &&
+	chmod 0600 ${HOME}/.ssh/config &&
     git init &&
     git config user.name "${GIT_USER_NAME}" &&
     git config user.email "${GIT_USER_EMAIL}" &&
