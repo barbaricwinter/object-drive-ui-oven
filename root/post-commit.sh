@@ -1,0 +1,19 @@
+# This file is part of object-drive-ui-oven.
+#
+#    object-drive-ui-oven is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    object-drive-ui-oven is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with object-drive-ui-oven .  If not, see <http://www.gnu.org/licenses/>.
+
+while ! git push origin $(git rev-parse --abbrev-ref HEAD)
+do
+    sleep 10s
+done
