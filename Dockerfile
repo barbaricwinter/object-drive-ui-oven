@@ -16,6 +16,5 @@ FROM fedora:25
 MAINTAINER Emory Merryman emory.merryman@deciphernow.com
 COPY root /opt/docker/
 RUN ["/usr/bin/sh", "/opt/docker/run.sh"]
-USER user
 ENTRYPOINT ["/usr/bin/sh", "/opt/docker/entrypoint.sh"]
 CMD []
