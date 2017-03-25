@@ -23,7 +23,7 @@ cd /code &&
     git config user.email "${GIT_USER_EMAIL}" &&
     git remote add upstream ssh://upstream/cte/object-drive-ui.git &&
     git config remote.upstream.pushurl "you really didn't want to do that" &&
-    git remote add origin ssh://origin/${GITLAB_USERID}/object-drive-ui.git &&
+    git remote add origin ssh://origin/${GITLAB_USER_ID}/object-drive-ui.git &&
     cp /opt/docker/post-commit.sh .git/hooks/post-commit &&
     chmod 0500 .git/hooks/post-commit &&
     git fetch upstream develop &&
