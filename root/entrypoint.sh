@@ -26,8 +26,10 @@ cd /code &&
     git remote add origin ssh://origin/${GITLAB_USER_ID}/object-drive-ui.git &&
     cp /opt/docker/post-commit.sh .git/hooks/post-commit &&
     chmod 0500 .git/hooks/post-commit &&
-    git fetch upstream develop &&
-    git checkout upstream/develop &&
+    sleep 10s &&
+    git fetch upstream ${PROJECT_PARENT_BRANCH} &&
+    git checkout upstream/${PROJECT_PARENT_BRANCH} &&
+    git checkout -b scratch/$(uuidgen) &&
     npm set cafile ca.crt &&
     npm set registry https://npm.363-283.io &&
     echo "strict-ssl=false" >> ${HOME}/.npmrc &&
