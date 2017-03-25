@@ -39,7 +39,7 @@ EOF
     ) &&
     echo "strict-ssl=false" >> ${HOME}/.npmrc &&
     npm install jspm &&
-    sed -i "s#\"strictSSL\": true#\"strictSSL\": false#" ~/.jspm/config 
+    sed -i "s#\"strictSSL\": true#\"strictSSL\": false#" ${HOME}/.jspm/config 
     export PATH=${PATH}:${PWD}/node_modules/.bin &&
     jspm config registries.github.remote https://github.jspm.io &&
     jspm config registries.github.auth ${GITHUB_REGISTRY_TOKEN} &&
