@@ -47,4 +47,4 @@ EOF
     jspm config registries.github.maxRepoSize 0 &&
     jspm config registries.github.handler jspm-github &&
     sed -i "s#\"strictSSL\": true#\"strictSSL\": false#" ${HOME}/.jspm/config &&
-    ( npm install || bash )
+    npm install
