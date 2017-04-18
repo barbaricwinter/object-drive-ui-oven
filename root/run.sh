@@ -20,7 +20,9 @@ dnf update --assumeyes &&
     dnf install --assumeyes openssh-clients &&
     dnf install --assumeyes curl &&
     dnf install --assumeyes git &&
-    dnf install --assumeyes nodejs &&
+    dnf install --assumeyes wget &&
+    dnf install --assumeyes tar &&
+    (cd $(mktemp -d) && wget https://nodejs.org/dist/v6.10.2/node-v6.10.2-linux-x64.tar.xz && tar -xJvf node-v6.10.2-linux-x64.tar.xz -C /opt && ln -sf /opt/node-v6.10.2-linux-x64/bin/* /usr/local/bin) &&
     adduser --create-home user &&
     mkdir /code &&
     chown user:user /code &&
